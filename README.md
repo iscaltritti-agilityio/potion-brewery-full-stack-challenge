@@ -1,6 +1,6 @@
 # The Bubbling Cauldron Full Stack Challenge
 
-The brewery's potion order management system is broken. Orders are piling up, customers are furious, and 47 Healing Elixirs are stuck in Quality Control with no way to move them forward.
+Our brewery's potion order management system is broken; 47 of my potions are stuck in Quality Control with no way to move them forward, other orders are piling up, and customers are starting to get furious.
 
 We need you to fix this.
 

@@ -99,7 +99,7 @@ public class PotionQuery
     }
 
     [GraphQLName("potionOrder")]
-    public PotionOrderType? GetPotionOrder(SqliteConnection db, string id)
+    public PotionOrderType? GetPotionOrder(SqliteConnection db, [GraphQLType("ID!")] string id)
     {
         using var cmd = db.CreateCommand();
         cmd.CommandText = "SELECT id, customer_name, location, potion, assigned_alchemist, status, notes FROM potion_orders WHERE id = @id";
@@ -157,7 +157,7 @@ public class PotionMutation
     }
 
     [GraphQLName("updatePotionOrderStatus")]
-    public PotionOrderType? UpdatePotionOrderStatus(SqliteConnection db, string id, string status)
+    public PotionOrderType? UpdatePotionOrderStatus(SqliteConnection db, [GraphQLType("ID!")] string id, string status)
     {
         if (!Constants.ValidStatuses.Contains(status))
         {
@@ -186,7 +186,7 @@ public class PotionMutation
     [GraphQLName("updatePotionOrderAlchemist")]
     public PotionOrderType? UpdatePotionOrderAlchemist(
         SqliteConnection db,
-        string id,
+        [GraphQLType("ID!")] string id,
         [GraphQLName("assigned_alchemist")] string assignedAlchemist)
     {
         using var cmd = db.CreateCommand();
