@@ -1,0 +1,33 @@
+.subtitle {
+  font-style: italic;
+}
+
+.submitButton {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.emptyState {
+  padding: 1rem;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.tipBox {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: rgba(20, 184, 166, 0.1);
+  border: 1px solid rgba(20, 184, 166, 0.2);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: var(--color-secondary-light);
+}
+
+.alchemistAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 0.75rem;
+  border: 2px solid var(--color-border);
+}

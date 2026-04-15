@@ -1,0 +1,15 @@
+.headerActions {
+  display: flex;
+  gap: 1rem;
+}
+
+.logoutButton {
+  background: rgba(239, 68, 68, 0.15) !important;
+  color: #fca5a5 !important;
+  border-color: rgba(239, 68, 68, 0.3) !important;
+}
+
+.logoutButton:hover {
+  background: rgba(239, 68, 68, 0.25) !important;
+  border-color: rgba(239, 68, 68, 0.5) !important;
+}

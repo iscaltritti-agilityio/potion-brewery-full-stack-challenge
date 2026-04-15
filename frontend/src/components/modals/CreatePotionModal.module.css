@@ -1,0 +1,10 @@
+.formActions {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.textareaField {
+  resize: vertical;
+}
