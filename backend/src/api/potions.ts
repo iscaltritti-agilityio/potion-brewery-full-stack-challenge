@@ -131,25 +131,19 @@ export const resolvers = {
 
     updatePotionOrderAlchemist: (_: any, { id, assigned_alchemist }: { id: string; assigned_alchemist: string }) => {
       return new Promise((resolve, reject) => {
-        db.run(
-          'UPDATE potion_orders SET assigned_alchemist = ? WHERE id = ?',
+        db.get(
+          'UPDATE potion_orders SET assigned_alchemist = ? WHERE id = ? RETURNING *',
           [assigned_alchemist, id],
-          function (err: Error | null) {
+          (err: Error | null, row: any) => {
             if (err) {
               reject(new Error('Failed to update potion order alchemist'));
               return;
             }
-            if (this.changes === 0) {
+            if (!row) {
               reject(new Error(`Potion order with id ${id} not found`));
               return;
             }
-            db.get('SELECT * FROM potion_orders WHERE id = ?', [id], (err2: Error | null, row: any) => {
-              if (err2) {
-                reject(new Error('Failed to fetch updated potion order'));
-                return;
-              }
-              resolve(row);
-            });
+            resolve(row);
           }
         );
       });
